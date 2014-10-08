@@ -161,7 +161,49 @@ bool backpack(int A[], int n, int target) {
 //k sum
 F[i][j][k] = F[i - 1][j][k] || F[i - 1][j - 1][k - A[i]]
 
-//
+//single num 3
+int get_bit(int in, int bit) {
+	int mask = in >> bit;
+	int ret = mask & 1;
+	return ret;
+}
+vector<int> single3(vector<int> input) {
+	//find the bit with different value
+	int diff_bit = -1;;
+	for(int i = 0; i < 31; i++) {
+		int mask = get_bit(input[0], i);
+		for(int j = 1; j < input.size(); j++) {
+			mask = mask & get_bit(input[j], i);
+		}
+		if(mask == 1) {
+			diff_bit = i;
+			break;
+		}
+	}
+	//find them
+	int ans_0 = -1;
+	int ans_1 = -1;
+	for(int i = 0; i < input.size(); i++) {
+		if(ans_0 == -1 && get_bit(input[i], diff_bit) == 0) {
+			ans_0 = input[i];
+			continue;
+		}
+		if(ans_1 == -1 && get_bit(input[i], diff_bit) == 1) {
+			ans_1 = input[i];
+			continue;
+		}
+		if(get_bit(input[i], diff_bit) == 0)
+			ans_0 = ans_0 ^ input[i];
+		else
+			ans_1 = ans_1 ^ input[i];
+	}
+	
+	vector<int> ret;
+	ret.push_back(ans_0);
+	ret.push_back(ans_1);
+	return ret;
+	
+}
 
 
 
