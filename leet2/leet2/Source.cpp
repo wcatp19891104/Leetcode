@@ -325,7 +325,40 @@ public:
 	}
 };
 
+int threeSumClosest(vector<int> &num, int target) {
+	if (num.size() == 3)
+		return num[0] + num[1] + num[2];
+	sort(num.begin(), num.end());
+	int start;
+	int end;
+	int sum = INT_MAX;
+	int ret = INT_MIN;
+
+	for (int i = 0; i < num.size() - 2; i++) {
+		start = i + 1;
+		end = num.size() - 1;
+		int t = target - num[i];
+		while (start < end) {
+			int temp = num[start] + num[end];
+			if (abs(temp - t) < abs(sum - t))
+				sum = temp;
+			if (temp == t)
+				return target;
+			else if (temp > t)
+				end--;
+			else
+				start++;
+		}
+		if (abs(sum - target) < abs(ret - target))
+			ret = sum;
+	}
+	return ret;
+}
+
 void main() {
+	vector<int> sumclo3(4, 1);
+	int ans_sum3 = threeSumClosest(sumclo3, 0);
+
 	Solution_reg reg;
 	char* s = "aa";
 	char* p = ".*";
