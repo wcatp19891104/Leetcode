@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "remove_duplicated", "remove_duplicated\remove_duplicated.vcxproj", "{CF1C8080-E988-4467-BC9B-4D1795C78393}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF1C8080-E988-4467-BC9B-4D1795C78393}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CF1C8080-E988-4467-BC9B-4D1795C78393}.Debug|Win32.Build.0 = Debug|Win32
+		{CF1C8080-E988-4467-BC9B-4D1795C78393}.Release|Win32.ActiveCfg = Release|Win32
+		{CF1C8080-E988-4467-BC9B-4D1795C78393}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
